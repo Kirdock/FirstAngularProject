@@ -1,0 +1,27 @@
+<div>
+  <label>name:
+    <input #heroName placeholder="name"/>
+    <input #heroName placeholder="name"/>
+    <button (click)="printValue(heroName.value)">Show Value</button>
+  </label>
+</div>
+
+<div>
+  <h1>Pipe Tests</h1>
+  <button (click)="pipeNextTest()">Pipe Next</button>
+  <button (click)="pipeReferenceTest()">Pipe Reference</button>
+</div>
+
+<div>
+  <h1>Other Tests</h1>
+  <button (click)="testEquals()">Equals</button>
+</div>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
