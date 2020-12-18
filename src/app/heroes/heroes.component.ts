@@ -16,8 +16,11 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm'
   };
   public heroes: Hero[];
+  private undefinedVal: any;
+  public inputValue: string;
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -62,5 +65,29 @@ export class HeroesComponent implements OnInit {
     });
     obj.next(myExample); // => reference. in subscribe (next) there is the same object
     console.log('value', obj.getValue());
+  }
+
+  undefinedTest(): void{
+    console.log(this.undefinedVal);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    this.heroService.addHero({name} as Hero)
+      .subscribe(hero => {
+          this.heroes.push(hero);
+        }
+      );
+  }
+
+  undefinedTestInput(): void {
+    console.log(this.inputValue); // same as in Vue. default value stays undefined
+  }
+
+  delete(hero: Hero) {
+    this.heroService.deleteHero(hero)
+      .subscribe(_ => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+      });
   }
 }
