@@ -15,6 +15,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HighlightDirective } from './highlight.directive';
 import { PlaygroundComponent } from './playground/playground.component';
+import { TestUppercasePipe } from './test-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PlaygroundComponent } from './playground/playground.component';
     PageNotFoundComponent,
     HighlightDirective,
     PlaygroundComponent,
+    TestUppercasePipe,
   ],
   imports: [
     BrowserModule,
