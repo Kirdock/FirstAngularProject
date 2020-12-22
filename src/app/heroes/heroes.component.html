@@ -1,8 +1,7 @@
 <div>
   <label>name:
     <input #heroName placeholder="name"/>
-    <input #heroName placeholder="name"/>
-    <button (click)="printValue(heroName.value)">Show Value</button>
+    <button (click)="add(heroName.value)">Add</button>
   </label>
 </div>
 
@@ -15,13 +14,21 @@
 <div>
   <h1>Other Tests</h1>
   <button (click)="testEquals()">Equals</button>
+  <button (click)="undefinedTest()">undefined Test</button>
+  <div>
+    <input [(ngModel)]="inputValue">
+    <button (click)="undefinedTestInput()">undefined Input Test</button>
+  </div>
 </div>
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes; let i = index">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    Index: {{i}}
+    <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
   </li>
 </ul>
