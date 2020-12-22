@@ -5,22 +5,6 @@
   </label>
 </div>
 
-<div>
-  <h1>Pipe Tests</h1>
-  <button (click)="pipeNextTest()">Pipe Next</button>
-  <button (click)="pipeReferenceTest()">Pipe Reference</button>
-</div>
-
-<div>
-  <h1>Other Tests</h1>
-  <button (click)="testEquals()">Equals</button>
-  <button (click)="undefinedTest()">undefined Test</button>
-  <div>
-    <input [(ngModel)]="inputValue">
-    <button (click)="undefinedTestInput()">undefined Input Test</button>
-  </div>
-</div>
-
 <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes; let i = index">

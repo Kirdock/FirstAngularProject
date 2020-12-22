@@ -1,0 +1,33 @@
+<div>
+  <h1>Pipe Tests</h1>
+  <button (click)="pipeNextTest()">Pipe Next</button>
+  <button (click)="pipeReferenceTest()">Pipe Reference</button>
+</div>
+
+<div>
+  <h1>Other Tests</h1>
+  <button (click)="testEquals()">Equals</button>
+  <button (click)="undefinedTest()">undefined Test</button>
+  <div>
+    <input [(ngModel)]="inputValue">
+    <button (click)="undefinedTestInput()">undefined Input Test</button>
+  </div>
+</div>
+
+<div>
+  <h1>Directive Tests</h1>
+
+  <h2>Pick a highlight color</h2>
+  <div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+  <p appHighlight="{{color}}">Highlight me! (two-way binding not possible for directive (except you are using objects))</p>
+  <button (click)="showValue(color)">Show Value</button>
+</div>
+
+<div>
+  <h1>Other</h1>
+  <p ngNonBindable>You can write {{something like this {{1+1}} }}</p>
+</div>
